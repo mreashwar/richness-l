@@ -1,0 +1,10 @@
+{
+  "name": "Richness Creator CRM",
+  "short_name": "RC CRM",
+  "description": "Business lead and sales CRM for Richness Creator",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#080d19",
+  "theme_color": "#0b1020",
+  "icons": []
+}

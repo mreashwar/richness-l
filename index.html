@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<title>Richness Creator CRM</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark">RC</div><div><b>RICHNESS CREATOR</b><small>GROWTH WORKSPACE</small></div></div>
+    <div class="workspace-label">WORKSPACE</div>
+    <nav>
+      <button class="nav active" data-view="dashboard"><span>▦</span> Dashboard</button>
+      <button class="nav" data-view="leads"><span>◎</span> Leads <em id="navLeadCount">0</em></button>
+      <button class="nav" data-view="tasks"><span>◷</span> Follow-ups</button>
+      <button class="nav" data-view="pipeline"><span>⌁</span> Sales pipeline</button>
+      <button class="nav" data-view="team"><span>♙</span> Team</button>
+      <button class="nav" data-view="reports"><span>▥</span> Reports</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="storage-note"><span class="pulse"></span><div><b>Local workspace</b><small>Data saved in this browser</small></div></div>
+      <button class="nav" data-view="settings"><span>⚙</span> Settings & data</button>
+      <div class="profile"><div class="avatar">SK</div><div><b>Workspace Admin</b><small>Richness Creator</small></div></div>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="menuBtn">☰</button>
+      <div><div class="eyebrow">RICHNESS CREATOR / <span id="crumb">OVERVIEW</span></div><h1 id="pageTitle">Dashboard</h1></div>
+      <div class="top-actions"><span class="today" id="today"></span><button class="btn ghost" id="exportTop">↓ Export</button><button class="btn primary" id="quickAdd">＋ Add lead</button></div>
+    </header>
+    <section id="view" class="content"></section>
+  </main>
+</div>
+
+<dialog id="leadDialog">
+<form method="dialog" id="leadForm">
+  <div class="modal-head"><div><div class="eyebrow">LEAD RECORD</div><h2 id="modalTitle">Add new lead</h2></div><button class="icon-btn" value="cancel" aria-label="Close">×</button></div>
+  <input type="hidden" id="leadId">
+  <div class="form-grid">
+    <label class="wide">Company name *<input id="company" required placeholder="e.g. ABC Trading (Pvt) Ltd"></label>
+    <label>Industry<select id="industry"><option>Manufacturing</option><option>Wholesale & Distribution</option><option>Retail</option><option>Construction</option><option>Hospitality & Tourism</option><option>Agriculture & Food</option><option>Transport & Logistics</option><option>Professional Services</option><option>ICT & Technology</option><option>Education & Healthcare</option><option>Other</option></select></label>
+    <label>Country<input id="country" value="Sri Lanka"></label>
+    <label>Business email<input id="email" type="email" placeholder="name@company.com"></label>
+    <label>Phone number<input id="phone" placeholder="+94 ..."></label>
+    <label>Website<input id="website" placeholder="https://"></label>
+    <label>Decision maker<input id="decision" placeholder="Contact person name"></label>
+    <label>Job title<input id="jobTitle" placeholder="Owner / Director / Manager"></label>
+    <label class="wide">Company address<input id="address" placeholder="Street, city, district"></label>
+    <label>District<input id="district" placeholder="e.g. Gampaha"></label>
+    <label>Lead source<input id="source" placeholder="Website / directory / referral"></label>
+    <label>Lead status<select id="status"><option>New</option><option>Researching</option><option>Needs Verification</option><option>Verified</option><option>Qualified</option><option>Contacted</option><option>Replied</option><option>Meeting</option><option>Proposal</option><option>Won</option><option>Lost</option><option>Do Not Contact</option></select></label>
+    <label>Priority<select id="priority"><option>Medium</option><option>High</option><option>Low</option></select></label>
+    <label>Next follow-up<input id="followup" type="date"></label>
+    <label class="wide">Notes<textarea id="notes" rows="3" placeholder="Business need, opportunity, last conversation..."></textarea></label>
+  </div>
+  <div class="modal-actions"><button class="btn ghost" value="cancel">Cancel</button><button class="btn primary" id="saveLead" value="default">Save lead</button></div>
+</form>
+</dialog>
+<input type="file" id="importFile" accept=".csv,.json" hidden>
+<script src="app.js"></script>
+</body></html>
